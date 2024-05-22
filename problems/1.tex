@@ -1,0 +1,6 @@
+\noindent\textbf{Problem 1.}
+
+For an integer \( k \geq 3 \), let \( N = R_{3}(k,k,k)  \) be the minimum \( N \) such that in every edge-coloring of \( K_{N}  \) in 3 colors there is a set \( X \) of \( k \) vertices so that all edges between vertices of \( X \) have the same color. Prove that \[ \binom{N}{k} \left ( \frac{1}{3}  \right ) ^{\binom{k}{2} - 1} \geq 1 \tag{$\ast$}. \]
+\begin{proof}
+	Suppose \[  \binom{N}{k} \left ( \frac{1}{3}  \right ) ^{\binom{k}{2} - 1} < 1 \] for a contradiction. Let \( \Omega \) be the space of all colorings of the edges of \( K_{N}  \) in 3 colors. Let \( R \subseteq V(K_{N} ) \) be a \( k \)-element subset of vertices, and let \( A_R \) be the event where \( R \) is monochromatic. So \[ P(A_{R}) = 3 \prod_{1 \leq i \leq \binom{k}{2} }^{} \frac{1}{3}  =  3^{1-\binom{k}{2} }. \] By sub-additivity, \[ P\left ( \bigcup_{R \in [V(K_{N})]^{k} }^{} A_{R}  \right ) \leq \sum_{R \in [V(K_{N})]^{k}}^{} 3^{1-k} = \binom{N}{k} 3^{1 - \binom{k}{2} } < 1.  \] Thus there is a non-zero probability that there is no monochromatic \( k \)-element subgraph of \( K_{N}  \), contradicting \( N = R_{3} (k,k,k) \). Hence \((\ast)\) follows and we're done.
+\end{proof}
