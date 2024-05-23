@@ -1,0 +1,6 @@
+\noindent\textbf{Problem 3.}
+
+Let \( G \) be a \( k \)-connected graph on \( n \) vertices. (a) prove that \( |E(G)| \geq kn/2 \); (b) now let \( G' \) be obtained from \( G \) by adding a vertex \( v \) adjacent to every vertex in \( G \). Show that \( G' \) is \( (k+1) \)-connected; (c) show that for every integer \( k \geq 2 \) and \( n \geq k + 1 \) there is a \( k \)-connected graph with \( |V(G)| = n \) and \( |E(G)| \leq (k-1)n \).
+\begin{proof}
+	For (a) note that since \( G \) is \( k \)-connected, every vertex has degree at least \( k \). By handshaking, \[ \frac{1}{2}  \sum_{v \in V(G)}^{} \deg v = |E(G)| \leq nk/2.  \] For (b), let \( v \) be adjacent to every vertex in \( V(G) \) in \( G' \). Let \( X \) be a subset of \( \leq k \) vertices in \( V(G') \). If \( v \in X \) then \( G'\setminus X = G \setminus (X \setminus \{ v \} ) \) is connected since \( G \) is \( k \)-connected and \( |X \setminus \{ v \} | \leq k - 1 \). Otherwise, \( v \notin X \). Let \( w \in X \) and note that \( G' \setminus (X \setminus \{ w \} ) \) is connected by \( k \)-connectivity. Then, we may remove \( w \) while preserving connectedness, since any two vertices \( x,y \) in \( G' \setminus X \) are both adjacent to \( v \). Hence \( G' \) is \( (k+1) \)-connected since \( X \) was arbitrary.
+\end{proof}
