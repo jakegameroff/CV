@@ -1,6 +1,20 @@
-\noindent\textbf{Problem 3.}
-
-Let \( G \) be a \( k \)-connected graph on \( n \) vertices. (a) prove that \( |E(G)| \geq kn/2 \); (b) now let \( G' \) be obtained from \( G \) by adding a vertex \( v \) adjacent to every vertex in \( G \). Show that \( G' \) is \( (k+1) \)-connected; (c) show that for every integer \( k \geq 2 \) and \( n \geq k + 1 \) there is a \( k \)-connected graph with \( |V(G)| = n \) and \( |E(G)| \leq (k-1)n \).
+%! TeX root: ../main.tex
+\subsection{Question 3}
+Let \( G \) be a \( k \)-connected graph on \( n \) vertices. 
+\begin{enumerate}[(a), leftmargin=1cm]
+	\item Prove that \( |E(G)| \geq kn/2 \).
+	\item Let \( G' \) be obtained from \( G \) by adding a vertex \( v \) adjacent to every vertex in \( G \). Show that \( G' \) is \( (k+1) \)-connected.
+	\item Show that for every integer \( k \geq 2 \) and \( n \geq k + 1 \) there is a \( k \)-connected graph with \( |V(G)| = n \) and \( |E(G)| \leq (k-1)n \).
+\end{enumerate}
 \begin{proof}
-	For (a) note that since \( G \) is \( k \)-connected, every vertex has degree at least \( k \). By handshaking, \[ \frac{1}{2}  \sum_{v \in V(G)}^{} \deg v = |E(G)| \leq nk/2.  \] For (b), let \( v \) be adjacent to every vertex in \( V(G) \) in \( G' \). Let \( X \) be a subset of \( \leq k \) vertices in \( V(G') \). If \( v \in X \) then \( G'\setminus X = G \setminus (X \setminus \{ v \} ) \) is connected since \( G \) is \( k \)-connected and \( |X \setminus \{ v \} | \leq k - 1 \). Otherwise, \( v \notin X \). Let \( w \in X \) and note that \( G' \setminus (X \setminus \{ w \} ) \) is connected by \( k \)-connectivity. Then, we may remove \( w \) while preserving connectedness, since any two vertices \( x,y \) in \( G' \setminus X \) are both adjacent to \( v \). Hence \( G' \) is \( (k+1) \)-connected since \( X \) was arbitrary.
+	For (a) note that since \( G \) is \( k \)-connected, every vertex has degree at least \( k \). Otherwise, there is a vertex with degree at most \( k - 1 \); deleting its neighbours disconnects the graph, contradicting \( k \)-connectivity. By handshaking, \[|E(G)| = \frac{1}{2}  \sum_{v \in V(G)}^{} \deg v \leq nk/2.  \] For (b), let \( v \) be adjacent to every vertex in \( V(G) \) in \( G' \). Let \( X \) be a subset of \( \leq k \) vertices in \( V(G') \). If \( v \in X \) then \( G'\setminus X = G \setminus (X \setminus \{ v \} ) \) is connected since \( G \) is \( k \)-connected and \( |X \setminus \{ v \} | \leq k - 1 \). Otherwise, \( v \notin X \). Let \( w \in X \) and note that \( G' \setminus (X \setminus \{ w \} ) \) is connected by \( k \)-connectivity. Then, we may remove \( w \) while preserving connectedness, since any two vertices \( x,y \) in \( G' \setminus X \) are both adjacent to \( v \). Hence \( G' \) is \( (k+1) \)-connected since \( X \) was arbitrary.
+
+	For (c) we may assume that \( n > 2k - 2 \), otherwise \( k+1 \leq n \leq 2k - 2 \) and \[\binom{n}{2} = \frac{n(n-1)}{2} \leq \frac{2k-2}{2} \cdot n = (k-1)n  \] so we can just take \( G = K_{n}  \), which is \( (n-1) \)-connected so that it is \( k \)-connected since \( k+1 \leq n \). Let \( G \) be \( d \)-regular, where \( d = 2k - 2 \). Then by handshaking, \[ |E(G)| = \frac{1}{2} \sum_{v \in V(G)}^{} d = \frac{n}{2} (2k-2) = (k-1)n. \] It remains to prove that \( G \) is \( k \)-connected. Let \( X \) be a set of at most \( k - 1 \) vertices.
+
+	We prove (c) by induction on \( k \). For \( k \geq 2 \) and \( n \geq k + 1 \), the cycle \( C_{n}  \) on \( n \) vertices is the graph we need. Indeed, \[ |E(C_{n})| = n = 1 \cdot n = (k-1)n. \] Now fix \( k\geq 3 \). By the IH we obtain a graph \( G' \) on \( n' \) vertices and \( m' \) edges such that \( G' \) is \( (k-1) \)-connected, \( n' \geq k \), and \( m' \leq (k - 2)n' \). Now let \( G \) be obtained by taking a vertex \( v \in V(G') \) and connecting it to every vertex in \( G' \). Then from (b) \( G \) is \( k \)-connected. This uses \( n' \) edges. Let \( n = n' + 1 \) and \( m = m' + n' \). Then \( n = n' + 1 \geq k + 1 \) and
+	\begin{align*}
+		m &= m' + n' \leq (k-2)n' + n' = (k-1)n' \\ 
+		  &\leq (k-1)(n' + 1) = (k-1)n
+	\end{align*}
+which completes the proof.
 \end{proof}
