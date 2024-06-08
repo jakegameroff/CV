@@ -2,7 +2,7 @@
 \subsection{Question 4} Prove that:
 \begin{enumerate}[(a), leftmargin=1cm]
 	\item If \( T \) is a tree then \( |V(T)| = |E(T)| + 1 \).
-	\item If \( F \) is a forest and \( c(F) \) is the number of components of \( F \), show that \( c(F) = |V(F)| - |E(F)| \).
+	\item If \( F \) is a forest and \( c(F) \) is the number of components of \( F \), then \( c(F) = |V(F)| - |E(F)| \).
 \end{enumerate}
 \begin{proof}
 For (a) we proceed by induction on \( |V(T)| \). If \( |V(T)| = 1 \) then \( T \) is edgeless so that \( |V(T)| = 0 + 1 = |E(T)| + 1 \). Now fix \( |V(T)| \geq 2 \).  Then \( T \) has at least one leaf \( v \). Let \( T' = T \setminus v \). Then \( T' \) is a tree on \( |V(T)| - 1 \) vertices, so by the IH we have \( |V(T')| = |E(T')| + 1 \). Appending \( v \) to \( T' \) gives one new vertex and one new edge. Hence \( |V(T)| = |V(T')| + 1 = |E(T')| + 1 + 1 = |E(T)| + 1 \) and we're done.

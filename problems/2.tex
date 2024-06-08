@@ -1,21 +1,12 @@
 %! TeX root: ../main.tex
 \subsection{Question 2}
 
-Let \( F \) be a forest on \( n \) vertices with \( c \) connected components. 
-\begin{enumerate}[(a), leftmargin=1cm]
-	\item Prove that \( F \) has \( n - c \) edges.
-	\item Find the average degree of \( G \).
-	\item Prove that the intersection of \( k \) connected subgraphs of \( F \) is either empty or a tree.
+Let \( F \) be a forest on \( n \) vertices. Prove that the intersection of \( k \) connected subgraphs of \( F \) is either empty or a tree.
 \end{enumerate}
-\begin{proof} For (a) we proceed by induction on \( c \). If \( c = 1 \) then \( F \) is a tree so that \( |E(F)| = |V(F)| - 1 = n - 1 \) as needed. Now fix \( c \geq 2 \) and let \( C \) be any component of \( F \). Let \( F' = F \setminus C \). By induction, \( |E(F')| = |V(F')| - (c - 1) \). Since \( C \) is maximally connected in \( F \), \( |E(C)| = |V(C)| + 1 \) since it is a tree. Since there was no edge between \( F' \) and \( C \) (it was a component),
-	\begin{align*}
-		|E(F)| &= |E(F')| + |E(C)| \\
-		       &= |V(F')| - (c - 1) + |V(C)| + 1 \\
-		       &= |V(F)| - c = n - c,
-	\end{align*}
-	which completes the proof.
+\begin{proof}
+It suffices to prove the claim when \( k = 2 \), since given connected subgraphs \( C_1, C_2, \hdots , C_{k}  \), we have by induction that \(C = C_1 \cap \cdots \cap C_{k-1}  \) is either a tree or empty. If \( C \) is a tree then it is connected and we may apply the case when \( k = 2 \) to \( C \cap C_{k}  \). Otherwise \( C \) is empty so that \( C \cap C_{k}  \) is too. Thus, we just need to prove the base case now.
 
-For (b) note that by handshaking and (a), \[ \sum_{v \in V(F)}^{} \deg v = 2 |E(F)| = 2(n - c)  \] so that the average degree of \( F \) is \(\frac{2}{n} (n-c).\)
+Let \( C_1, C_2 \) be two connected subgraphs of \( F \). If \( C_1 \cap C_2 \) is not empty, then there is a vertex \( v \) in their intersection. Thus \( C_1 \cap C_2 \) is connected. Since \( C_1 \cap C_2 \subseteq C_1 \) and \( C_1 \) is acyclic, so is \( C_1 \cap C_2 \). Hence \( C_1 \cap C_2 \) is a tree. If \( C_1 \cap C_2 \) is not a tree, then it is either not connected or contains a cycl. The latter case can not hold, since \( C_1 \cap C_2 \subseteq F \) is a forest.
 
-Finally, for (c) we proceed as in (a) by induction on \( k \). The intersection of 1 connected subgraph of \( F \) must be a tree since \( F \) is a forest. Now let \( F_1 \) and \( F_2 \) be connected subgraphs of \( F \). Assume for a contradiction that \( F_1 \cap F_2 \) is not a tree \emph{and} non-empty. Since \( F_1 \cap F_2 \) is a subgraph of a forest, it is acyclic; thus \( F_1 \cap F_2 \) must not be connected, otherwise it is a tree. But then \( F_1 \cap F_2 \) is itself a forest. Using this and non-emptyness, there are vertices \( u,v \in V(F_1 \cap F_2) \) which lie in different conneted components. But then \( u,v \) lie in different connected components of \( F \), and \( u,v \in V(F_1) \) contradicts its connectivity, as needed. If \( k \geq 3 \), write \( F' = F_1 \cap F_2 \cap \cdots \cap F_{k-1}  \) and note that \( F' \) is either a tree or empty. In the first case, \( F' \) is connected so the induction hypothesis implies the result for \( F' \cap F_{k}  \); otherwise \( F' \) is null so that \( F' \cap F_{k}  \) is too. This completes the proof.
+If \( C_1 \cap C_2 \) is non-null, then it must be connected. Indeed, as before, there is a vertex \( v \) in \( C_1 \cap C_2 \). Then there is a path between the two components so that \( C_1 \cap C_2 \) must be connected. Applying the contrapositive, we obtain that \( C_1 \cap C_2 = \emptyset  \). 
 \end{proof}
