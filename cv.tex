@@ -1,0 +1,84 @@
+\documentclass{resume}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.1in]{geometry}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{Jake R. Gameroff}
+\address{Phone: 514 258 0198 \\ Email: \texttt{jakegameroff@gmail.com}}
+\address{GitHub: \href{https://github.com/jakegameroff/}{\texttt{www.github.com/jakegameroff}}}
+
+\definecolor{CarnegieMellonRed}{RGB}{196,18,48}
+
+\renewenvironment{rSection}[1]{
+\sectionskip
+\textcolor{CarnegieMellonRed}{\MakeUppercase{#1}}
+\sectionlineskip
+\hrule
+\begin{list}{}{
+\setlength{\leftmargin}{1.5em}
+}
+\item[]
+}{
+\end{list}
+}
+
+\begin{document}
+\begin{rSection}{Education}
+{\bf McGill University} \hfill {\em August 2022 -- May 2025} 
+\\ \emph{B.A. in Honours Mathematics and Computer Science} \hfill
+\vspace{0.1cm}
+\\ Dean's Honour List (top 10\% at end of academic year)
+\\ Grade Point Average: 3.84/4.00 \hfill
+\\ Relevant coursework: \textit{Real analysis 1 -- 4; Measure theory (graduate); Functional analysis (graduate); Probability theory (graduate); Algorithmic game theory (graduate); Combinatorics; Graph theory; Single and multivariable calculus; Linear algebra; Group theory; Algorithms and data structures; Software systems; Functional programming; Machine learning and AI.}
+
+{\bf Marianopolis College} \hfill {\em August 2020 -- May 2022} 
+\\ \emph{DEC in Social Sciences and Commerce}
+\vspace{0.1cm}
+\\ Dean's Honour List (received every semester), Dean's Honour Roll, Marianopolis Scholar
+\\ Weighted Average: 95.93\%
+\\ R-Score: 36.625
+\end{rSection}
+
+\begin{rSection}{Awards \& Scholarships} \itemsep -2pt
+{Tomlinson Undergraduate Award (\$300)} \hfill {\em May 2024} \\
+{McGill Faculty of Arts Scholarship (\$100)}\hfill {\em January 2024} \\
+{McGill Alma Mater Scholarship (\$3,000)}\hfill {\em Augsut 2022} \\
+{Marianopolis English Department Prize}\hfill {\em May 2022} \\
+{Nominee for Marianopolis Shakespear Award}\hfill {\em May 2022}
+\end{rSection}
+
+\begin{rSection}{Academic Experience}
+\begin{rSubsection}{McGill Math Help Desk}{\em January 2024 -- May 2024}{} 
+
+\item Tutored math majors at the undergraduate level at McGill's Math Help Desk.
+\item Specializing in real analysis, group theory, calculus, linear algebra, and combinatorics.
+\end{rSubsection}
+\begin{rSubsection}{McGill Course Grader (next semester)}{\em August 2024}{} 
+
+\item Course grader in a senior-undergraduate-level measure theory course.
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Research Experience}
+	\begin{rSubsection}{McGill Directed Reading Program}{\em January 2024 -- July 2024}{(\href{https://github.com/jakegameroff/DRP2024/blob/main/main.pdf}{link to report})}
+
+	\item Wrote a technical report in analytic combinatorics, supervised by a graduate student in mathematics.
+\item Strengthened and generalized a result from a peer reviewed paper in mathematics.
+\end{rSubsection}
+\begin{rSubsection}{Ramsey Theory Presentation }{\em June 2024}{(links to: \href{https://github.com/jakegameroff/RamseyTalk24/blob/main/Presentation/pres.pdf}{slides}, \href{https://github.com/jakegameroff/RamseyTalk24/blob/main/TalkNotes/main.pdf}{notes})}
+
+	\item Delivered a detailed presentation on Ramsey theory to a group of McGill undergraduate students.
+\end{rSubsection}
+
+\end{rSection}
+
+\begin{rSection}{Technical Skills \& Hobbies} \itemsep -2pt
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programming Languages: &  Python, Java, C, OCaml, \LaTeX \\
+Specialties in Mathematics: & Real analysis, Calculus, Linear algebra, High-school math \\
+Hobbies: & Hiking, Swimming, Badminton \\
+\end{tabular}
+\end{rSection}
+\end{document}
