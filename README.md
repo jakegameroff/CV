@@ -1,1 +1,1 @@
-My [Curriculum Vitae](https://github.com/jakegameroff/CV/blob/main/cv.pdf).
+My [CV](https://github.com/jakegameroff/CV/blob/main/cv.pdf).
